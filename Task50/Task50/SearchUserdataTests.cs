@@ -28,9 +28,9 @@ namespace Task50
             var listOfEmployees = ListEmployees();
         }
 
-        private List<EmployeeData> ListEmployees()
+        private List<Employee> ListEmployees()
         {
-            var listOfEmployees = new List<EmployeeData>();
+            var listOfEmployees = new List<Employee>();
             var pagerButton = driver.FindElement(By.Id("example_next"));
             var x = 0;
 
@@ -48,7 +48,7 @@ namespace Task50
             return listOfEmployees;
         }
 
-        private void SortOutEmployees(List<EmployeeData> listOfEmployees)
+        private void SortOutEmployees(List<Employee> listOfEmployees)
         {
             var employees = driver.FindElements(By.XPath("//table[@id='example']//tbody/*"));
             foreach (var employee in employees)
@@ -58,7 +58,7 @@ namespace Task50
 
                 if (int.Parse(age) > 50 && int.Parse(salary) < 300000)
                 {
-                    var newEmp = new EmployeeData(
+                    var newEmp = new Employee(
                         employee.FindElement(By.XPath(".//td[1]")).Text,
                         employee.FindElement(By.XPath(".//td[2]")).Text,
                         employee.FindElement(By.XPath(".//td[3]")).Text);
