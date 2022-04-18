@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Task50
 {
-    public class EmployeeData
+    public class Employee
     {
         public string Name { get; set; }
         public string Position { get; set; }
         public string Office { get; set; }
 
-        public EmployeeData (string name, string position, string office)
+        public Employee (string name, string position, string office)
         {
             Name = name;
             Position = position;
